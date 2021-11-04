@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import Form from 'react-bootstrap/Form';
-import { FloatingLabel, Button, Col, Container } from 'react-bootstrap';
+import { Form, FloatingLabel, Button, Col, Container } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setCurrentUser } from '../../redux/user/userActions';
 
 export const LoginForm = () => {
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
+
   const [input, setInput] = useState({
     username: '',
     email: '',
@@ -13,6 +17,7 @@ export const LoginForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    dispatch(setCurrentUser(input));
     navigate('/dashboard');
   };
 
