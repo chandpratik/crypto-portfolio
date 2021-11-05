@@ -1,12 +1,21 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Nav, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+
 import { removeUser } from '../../redux/user/userActions';
 
 export const Navigation = () => {
   const user = useSelector(state => state.user.username);
 
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
+
+  const handleSubmit = () => {
+    dispatch(removeUser());
+    navigate('/');
+  };
 
   return (
     <Nav className="border-bottom justify-content-between">
@@ -27,7 +36,7 @@ export const Navigation = () => {
           <p className="font-weight-bold p-0 m-0">{user}</p>
         </Nav.Item>
         <Nav.Item className="d-flex justify-content-center align-items-center mx-3">
-          <Button className="btn-sm" onClick={() => dispatch(removeUser())}>
+          <Button className="btn-sm" onClick={handleSubmit}>
             LogOut
           </Button>
         </Nav.Item>

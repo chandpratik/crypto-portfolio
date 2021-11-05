@@ -45,6 +45,7 @@ export const LoginForm = () => {
               placeholder="Jhon Doe"
               value={input.username}
               onChange={handleChange}
+              required
             />
           </FloatingLabel>
 
@@ -55,6 +56,7 @@ export const LoginForm = () => {
               placeholder="name@example.com"
               value={input.email}
               onChange={handleChange}
+              required
             />
           </FloatingLabel>
           <FloatingLabel label="Password" className="mb-3">
@@ -65,6 +67,7 @@ export const LoginForm = () => {
               value={input.password}
               onChange={handleChange}
               autoComplete="on"
+              required
             />
           </FloatingLabel>
           <div className="d-grid">

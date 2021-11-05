@@ -9,7 +9,6 @@ export const Card = ({ data, index }) => {
     next_review_date,
     subscription_fee,
     cagr,
-    basket_logo_url,
   } = data;
 
   const assets = basket_items.reduce((acc, curr) => {
@@ -25,15 +24,11 @@ export const Card = ({ data, index }) => {
       }`}
     >
       <div>
-        {basket_logo_url ? (
-          <img
-            src="https://uploads-ssl.webflow.com/609d636bf106e25af62763ff/60abf0a36059b533f1935f9d_Screenshot%202021-05-24%20at%204.24.08%20PM.png"
-            alt="logo"
-            className="logo"
-          />
-        ) : (
-          name
-        )}
+        <img
+          src="https://uploads-ssl.webflow.com/609d636bf106e25af62763ff/60abf0a36059b533f1935f9d_Screenshot%202021-05-24%20at%204.24.08%20PM.png"
+          alt="logo"
+          className="logo"
+        />
       </div>
       <div className="d-flex flex-column justify-content-center">
         <div className="d-flex align-items-center">
